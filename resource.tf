@@ -8,8 +8,8 @@ resource "aws_instance" "project-test" {
     Name = "Project-test"
   }
 provisioner "file" {
-    source      = "/var/lib/jenkins/workspace/project2/*"
-    destination = "/tmp/"
+    source      = "/var/lib/jenkins/workspace/project2/ansible.sh"
+    destination = "/tmp/ansible.sh"
   }
 provisioner "remote-exec" {
   inline = [
