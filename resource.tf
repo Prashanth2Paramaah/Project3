@@ -14,7 +14,7 @@ provisioner "file" {
 provisioner "remote-exec" {
   inline = [
     "sudo yum update -y",
-    "sudo cp /tmp/* /home/centos/"
+    "sudo cp /tmp/ansible.sh /home/centos/"
     ]
 }
 connection {
