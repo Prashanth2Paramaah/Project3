@@ -8,7 +8,7 @@ resource "aws_instance" "project-test" {
     Name = "Project-test"
   }
 provisioner "file" {
-    source      = "/var/lib/jenkins/workspace/project2/ansible.sh"
+    source      = "/var/lib/jenkins/workspace/project3/ansible.sh"
     destination = "/tmp/ansible.sh"
   }
 provisioner "remote-exec" {
