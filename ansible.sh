@@ -25,4 +25,6 @@ sudo systemctl start docker
 
 sudo systemctl enable docker
 
+sudo chmod 777 /var/run/docker.sock
+
 # systemctl restart docker containerd
