@@ -7,21 +7,14 @@ resource "aws_instance" "project-test" {
   tags = {
     Name = "Project-test"
   }
+provisioner "file" {
+    source      = "/var/lib/jenkins/workspace/project2/*"
+    destination = "/tmp/"
+  }
 provisioner "remote-exec" {
   inline = [
     "sudo yum update -y",
-    "touch file3",
-    "sudo yum install git -y",
-    "echo 'Git Installation Is Successful'",
-    "sudo git --version",
-    "sudo yum install -y yum-utils",
-    "sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo",
-    "sudo yum install docker-ce docker-ce-cli containerd.io -y",
-    "sudo systemctl start docker",
-    "sudo systemctl enable docker",
-    "echo 'Docker Installation Is Successful'",
-    "sudo docker --version",
-    "touch file4"
+    "sudo cp /tmp/* /home/centos/"
     ]
 }
 connection {
